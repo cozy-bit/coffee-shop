@@ -1,5 +1,5 @@
 import './App.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './Header'
 import Hero from './Hero'
 import MenuItem from './MenuItem'
@@ -7,8 +7,17 @@ import OrderForm from './OrderForm'
 import Footer from './Footer'
 
 function App() {
-  const [cartItems, setCartItems] = useState([])
+  const [cartItems, setCartItems] = useState(() => {
+
+    const savedCart = localStorage.getItem('coffeeCart')
+    return savedCart ? JSON.parse(savedCart) : []
+  })
+
   const [activeCategory, setActiveCategory] = useState('Все')
+
+  useEffect(() => {
+    localStorage.setItem('coffeeCart', JSON.stringify(cartItems))
+  }, [cartItems])
 
   const menuItems = [
     { id: 1, name: "Эспрессо", description: "Классический крепкий кофе", price: 120, category: "Кофе", image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGVzcHJlc3NvfGVufDB8fDB8fHww" },
@@ -23,8 +32,8 @@ function App() {
 
   const categories = ['Все', 'Кофе', 'Чай', 'Десерты']
 
-  const filteredItems = activeCategory === 'Все' 
-    ? menuItems 
+  const filteredItems = activeCategory === 'Все'
+    ? menuItems
     : menuItems.filter(item => item.category === activeCategory)
 
   const addToCart = (item) => {
@@ -40,10 +49,10 @@ function App() {
       <Header cartItems={cartItems} onClearCart={clearCart} />
       <main>
         <Hero />
-        
+
         <div className="categories">
           {categories.map(category => (
-            <button 
+            <button
               key={category}
               className={activeCategory === category ? 'active' : ''}
               onClick={() => setActiveCategory(category)}
@@ -55,7 +64,7 @@ function App() {
 
         <div className="menu-grid">
           {filteredItems.map(item => (
-            <MenuItem 
+            <MenuItem
               key={item.id}
               item={item}
               onAddToCart={addToCart}
@@ -63,8 +72,8 @@ function App() {
           ))}
         </div>
         {cartItems.length > 0 && (
-          <OrderForm 
-            itemsCount={cartItems.length} 
+          <OrderForm
+            itemsCount={cartItems.length}
             onOrderComplete={clearCart}
           />
         )}
