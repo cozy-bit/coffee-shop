@@ -1,10 +1,12 @@
 import './App.css'
+import "./Adaptive.css"
 import { useState, useEffect } from 'react'
 import Header from './Header'
 import Hero from './Hero'
 import MenuItem from './MenuItem'
 import OrderForm from './OrderForm'
 import Footer from './Footer'
+
 
 function App() {
   const [cartItems, setCartItems] = useState(() => {

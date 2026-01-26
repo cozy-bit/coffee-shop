@@ -1,0 +1,200 @@
+@media (max-width: 1024px) {
+  main {
+    max-width: 95%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .hero h2 {
+    font-size: 2em;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .cart {
+    font-size: 1em;
+    padding: 8px 15px;
+  }
+
+  .cart-details {
+    right: 50%;
+    transform: translateX(50%);
+    min-width: 250px;
+  }
+
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero h2 {
+    font-size: 1.8em;
+  }
+
+  .hero button {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+
+  main {
+    margin: 15px auto;
+    padding: 15px;
+  }
+
+  .categories {
+    gap: 8px;
+  }
+
+  .categories button {
+    padding: 10px 18px;
+    font-size: 0.9em;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .menu-item {
+    padding: 0;
+  }
+
+  .menu-item img {
+    height: 180px;
+  }
+
+  .menu-item-content {
+    padding: 15px;
+  }
+
+  .menu-item h3 {
+    font-size: 1.3em;
+  }
+
+  .price {
+    font-size: 1.3em;
+  }
+
+  .menu-item button {
+      /* margin: 10px 20px; */
+
+  }
+
+  .order-form {
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .order-form h3 {
+    font-size: 1.3em;
+  }
+
+  footer {
+    padding: 15px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2em;
+  }
+
+  .hero h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 0.9em;
+  }
+
+  .hero button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  .categories button {
+    padding: 8px 15px;
+    font-size: 0.85em;
+  }
+
+  .menu-item h3 {
+    font-size: 1.1em;
+  }
+
+  .description {
+    font-size: 0.85em;
+  }
+
+  .price {
+    font-size: 1.2em;
+  }
+
+  .menu-item button {
+    padding: 10px 15px;
+    font-size: 0.9em;
+  }
+
+  .order-form {
+    padding: 15px;
+  }
+
+  .order-form input {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  .order-form button {
+    padding: 12px;
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 1400px) {
+  main {
+    max-width: 1400px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .hero h2 {
+    font-size: 3em;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .hero h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .hero button {
+    margin-top: 10px;
+  }
+
+  main {
+    margin: 15px auto;
+  }
+}
